@@ -20,9 +20,9 @@ export function countNeighbors(row: number, col: number, grid: Grid): number {
   ];
 
   let count = 0;
-  for (let [dx, dy] of directions) {
-    let newRow = row + dx;
-    let newCol = col + dy;
+  for (const [dx, dy] of directions) {
+    const newRow = row + dx;
+    const newCol = col + dy;
 
     //Inbound check
     if (newRow >= 0 && newRow < grid.length && newCol >= 0 && newCol < grid[0].length) {
@@ -48,7 +48,7 @@ export function nextGeneration(grid: Grid): Grid {
 
   for (let i = 0; i < grid.length; i++) {
     for (let j = 0; j < grid[0].length; j++) {
-      let liveNeighbors = countNeighbors(i, j, grid);
+      const liveNeighbors = countNeighbors(i, j, grid);
 
       // Applying Game of Life rules
       if (grid[i][j] === 1) {
